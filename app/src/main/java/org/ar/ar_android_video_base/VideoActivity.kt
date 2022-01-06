@@ -40,7 +40,7 @@ class VideoActivity : AppCompatActivity(), View.OnClickListener {
         override fun onJoinChannelSuccess(channel: String, uid: String, elapsed: Int) {
             super.onJoinChannelSuccess(channel, uid, elapsed)
             CoroutineScope(Dispatchers.IO).launch {
-                Fuel.post("http://192.168.16.254:8080/cloudRecord/start")
+                Fuel.post("http://rtcback.zhiyashengya.com/cloudRecord/start")
                     .objectBody(StartRecordRequest(channel, uid))
                     .response { _, response, _ ->
                         if (response.isSuccessful) {
