@@ -1,6 +1,7 @@
 package org.ar.ar_android_video_base
 
 import android.app.Application
+import com.github.kittinunf.fuel.Fuel
 import kotlin.properties.Delegates
 
 class App:Application() {
