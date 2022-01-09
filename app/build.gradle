@@ -26,12 +26,20 @@ android {
     }
 
     buildTypes {
-        debug{
-            buildConfigField("String","SERVER_URL","\"http://127.0.0.1:8080\"")
-        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        flavorDimensions  "environment"
+        development {
+            dimension  "environment"
+            buildConfigField("String","SERVER_URL","\"http://127.0.0.1:8080\"")
+        }
+        production {
+            dimension  "environment"
             buildConfigField("String","SERVER_URL","\"http://rtcback.zhiyashengya.com\"")
         }
     }
